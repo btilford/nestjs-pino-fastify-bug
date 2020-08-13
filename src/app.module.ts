@@ -41,9 +41,6 @@ export const captured = new CaptureOutput();
       ],
       pinoHttp: [
         {
-          base: {
-            context: 'ACCESS-LOGGER'
-          },
           genReqId: req => {
             req.id = (
               req.id

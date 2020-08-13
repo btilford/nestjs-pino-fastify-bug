@@ -1,3 +1,20 @@
+## Bug 
+
+The middleware does not seem to run when @nestjs/platform-fastify is used.
+
+1. Access logging is not running.
+2. Request ID `req.id` is not being set or added on log messages during the request.
+
+There are some console.asserts in the app controller that check counts of access logs and counts of logs that include
+`req.id`.
+
+```
+curl localhost:3000 # should have access logs
+curl localhost:3000/ping # should not have access logs
+```
+
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
